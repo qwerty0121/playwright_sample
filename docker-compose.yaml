@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright/python:v1.27.0-focal
+    volumes:
+      - ./playwright_sample:/var/playwright_sample
+    entrypoint: >
+      sh -c "
+        cd /var/playwright_sample &&
+        python sample.py
+      "
